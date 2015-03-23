@@ -1,2 +1,0 @@
-# GrpcAPI
-Repository for GRPC
