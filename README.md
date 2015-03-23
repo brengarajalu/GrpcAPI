@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 grpc-java
 =========
 
@@ -117,3 +118,7 @@ The 'transport' layer does the heavy lifting of putting & taking bytes off the w
 ### Examples
 
 Tests showing how these layers are composed to execute calls using protobuf messages can be found here https://github.com/google/grpc-java/tree/master/integration-testing/src/main/java/io/grpc/testing/integration
+=======
+# GrpcAPI
+Repository for GRPC
+>>>>>>> 03ba12d7668f02b65c07af5499ad9612df58bc90
