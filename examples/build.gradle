@@ -1,14 +1,20 @@
 apply plugin: 'application'
 apply plugin: 'protobuf'
 
+//apply plugin: 'spring-boot'
+
 description = "grpc Examples"
 
 buildscript {
     repositories {
         mavenCentral()
+        //maven { url "http://repo.spring.io/release" }
     }
     dependencies {
+
         classpath libraries.protobuf_plugin
+        //classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE")
+        
     }
 }
 
@@ -18,6 +24,10 @@ dependencies {
             project(':grpc-okhttp'),
             project(':grpc-stub'),
             libraries.jsonp
+            //compile("org.springframework.boot:spring-boot-starter-web:1.2.1.RELEASE")
+            //testCompile("org.springframework.boot:spring-boot-starter-test")
+            //compile("org.scala-lang:scala-library:2.11.4")
+            //compile("org.webjars:bootstrap:3.1.1")
 }
 
 protobufCodeGenPlugins = ["java_plugin:$javaPluginPath"]
@@ -44,6 +54,17 @@ task helloWorldServer(type: JavaExec) {
 task helloWorldClient(type: JavaExec) {
     main = "io.grpc.examples.helloworld.HelloWorldClient"
     description = "Executes the hello world client."
+    classpath = sourceSets.main.runtimeClasspath
+}
+task pollServiceServer(type: JavaExec) {
+    main = "io.grpc.examples.pollservice.PollServiceServer"
+    description = "Executes the pollservice server."
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task pollServiceClient(type: JavaExec) {
+    main = "io.grpc.examples.pollservice.PollServiceClient"
+    description = "Executes the pollservice client."
     classpath = sourceSets.main.runtimeClasspath
 }
 

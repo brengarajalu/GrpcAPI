@@ -41,8 +41,8 @@ subprojects {
                 protobuf_plugin: 'ws.antonov.gradle.plugins:gradle-plugin-protobuf:0.9.1',
 
                 // TODO: Unreleased dependencies.
-                // These must already be installed in the local maven repository.
-                netty: 'io.netty:netty-codec-http2:4.1.0.Beta5-SNAPSHOT',
+                // These must already be installed in the local maven repository
+                netty: 'io.netty:netty-codec-http2:4.1.0.Beta4',
 
                 // Test dependencies.
                 junit: 'junit:junit:4.11',
